@@ -82,5 +82,5 @@ jobs:
 
       - name: Build and Publish Docker
         run: |
-          docker build . -t  ${{ secrets.AZURE_DOCKER }}/purchase-challenge:${{ github.sha }}
-          docker push ${{ secrets.AZURE_DOCKER }}/purchase-challenge:${{ github.sha }}
+          docker build . -t  ${{ secrets.AZURE_DOCKER }}/gw-challenge:${{ github.sha }}
+          docker push ${{ secrets.AZURE_DOCKER }}/gw-challenge:${{ github.sha }}
