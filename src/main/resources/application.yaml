@@ -13,7 +13,7 @@ spring:
           - id: purchase-api
             uri: http://${PURCHASE_API}:${PURCHASE_PORT}
             predicates:
-              - Path=/purchases/**
+              - Path=/purchase/**
           - id: vehicle-api
             uri: http://${VEHICLE_API}:${VEHICLE_PORT}
             predicates:
