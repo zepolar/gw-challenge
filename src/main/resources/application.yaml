@@ -22,14 +22,10 @@ spring:
             uri: http://${CONVERSION_API}:${CONVERSION_PORT}
             predicates:
               - Path=/conversion/**
-          - id: conversion-api
-            uri: http://${CONVERSION_API}:${CONVERSION_PORT}
-            predicates:
-              - Path=/conversion/**
           - id: report-api
             uri: http://${REPORT_API}:${REPORT_PORT}
             predicates:
-              - Path=/conversion/**
+              - Path=/reports/**
         http-client:
           connect-timeout: 1000
           read-timeout: 5s
