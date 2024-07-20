@@ -20,7 +20,7 @@ ENV PURCHASE_API="" \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US:en"
 
-COPY --chown=zepolar:zepolar ./target/conversion-challenge-1.0.jar /app
+COPY --chown=zepolar:zepolar ./target/gw-challenge-1.0.jar /app
 
 USER zepolar
 
