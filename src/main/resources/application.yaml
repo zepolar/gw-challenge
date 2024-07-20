@@ -1,0 +1,35 @@
+server:
+  port: 80
+spring:
+  mvc:
+    problemdetails:
+      enabled: true
+  application:
+    name: API-GATEWAY-SERVICE
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: purchase-api
+            uri: http://${PURCHASE_API}:${PURCHASE_PORT}
+            predicates:
+              - Path=/purchases/**
+          - id: vehicle-api
+            uri: http://${VEHICLE_API}:${VEHICLE_PORT}
+            predicates:
+              - Path=/vehicle/**
+          - id: conversion-api
+            uri: http://${CONVERSION_API}:${CONVERSION_PORT}
+            predicates:
+              - Path=/conversion/**
+          - id: conversion-api
+            uri: http://${CONVERSION_API}:${CONVERSION_PORT}
+            predicates:
+              - Path=/conversion/**
+          - id: report-api
+            uri: http://${REPORT_API}:${REPORT_PORT}
+            predicates:
+              - Path=/conversion/**
+        http-client:
+          connect-timeout: 1000
+          read-timeout: 5s
